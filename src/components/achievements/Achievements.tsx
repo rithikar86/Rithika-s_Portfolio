@@ -1,5 +1,6 @@
 import { GraduationCap, BadgeCheck, Star } from 'lucide-react';
 import { highlights, portfolioCertifications, education as educationData } from '@/data/achievements';
+import TiltCard from '@/components/TiltCard';
 
 export default function Achievements() {
   return (
@@ -16,13 +17,15 @@ export default function Achievements() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
           {highlights.map((h, i) => (
-            <article
+            <TiltCard
               key={h.title}
-              className="card-surface card-hover p-6 group animate-fade-up"
+              as="article"
+              intensity={4}
+              className="card-surface p-6 group animate-fade-up transition-all duration-300 hover:-translate-y-1 hover:shadow-card hover:border-rust-200"
               style={{ animationDelay: `${i * 80}ms` }}
             >
               <div className="flex items-center justify-between">
-                <div className="grid place-items-center h-12 w-12 rounded-xl bg-rust-50 text-rust-500 group-hover:bg-rust-500 group-hover:text-white transition-colors duration-300">
+                <div className="grid place-items-center h-12 w-12 rounded-xl bg-rust-50 text-rust-500 group-hover:bg-rust-500 group-hover:text-white transition-all duration-300 group-hover:scale-105">
                   <h.icon size={22} />
                 </div>
                 <span className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-cream-200 text-ink-600 border border-cream-400">
@@ -34,12 +37,12 @@ export default function Achievements() {
                 {h.title}
               </h3>
               <p className="mt-2.5 text-sm text-ink-500 leading-relaxed">{h.desc}</p>
-            </article>
+            </TiltCard>
           ))}
         </div>
 
         <div className="grid lg:grid-cols-2 gap-5 lg:gap-6 mt-6">
-          <div className="card-surface p-7 animate-fade-up">
+          <div className="card-surface p-7 animate-fade-up transition-all duration-300 hover:-translate-y-1 hover:shadow-card hover:border-rust-200">
             <div className="flex items-center gap-3 mb-5">
               <div className="grid place-items-center h-11 w-11 rounded-xl bg-rust-50 text-rust-500">
                 <BadgeCheck size={22} />
@@ -58,7 +61,7 @@ export default function Achievements() {
             </ul>
           </div>
 
-          <div className="card-surface p-7 animate-fade-up" style={{ animationDelay: '80ms' }}>
+          <div className="card-surface p-7 animate-fade-up transition-all duration-300 hover:-translate-y-1 hover:shadow-card hover:border-rust-200" style={{ animationDelay: '80ms' }}>
             <div className="flex items-center gap-3 mb-5">
               <div className="grid place-items-center h-11 w-11 rounded-xl bg-rust-50 text-rust-500">
                 <GraduationCap size={22} />

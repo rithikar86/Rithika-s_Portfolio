@@ -1,4 +1,6 @@
 import { ArrowRight, Download, Sparkles } from 'lucide-react';
+import RevealOnScroll from '@/components/Reveal';
+import Hero3DCanvas from '@/components/Hero3DCanvas.jsx';
 
 const stackPills = [
   { label: 'React', span: 'col-span-2', tone: 'bg-rust-50 text-rust-700 border-rust-200' },
@@ -19,36 +21,27 @@ export default function Hero() {
       </div>
 
       <div className="section-pad max-w-7xl mx-auto grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-        <div className="lg:col-span-7 space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white border border-gray-200/60 px-3.5 py-1.5 shadow-soft animate-fade-in">
+        <RevealOnScroll className="lg:col-span-7 space-y-6" delay={60}>
+          <div className="inline-flex items-center gap-2 rounded-full bg-white border border-gray-200/60 px-3.5 py-1.5 shadow-soft transition-all duration-300 hover:-translate-y-0.5">
             <Sparkles size={14} className="text-rust-500" />
             <span className="text-xs font-medium text-ink-600">Full-Stack &amp; Generative AI</span>
           </div>
 
-          <h1
-            className="font-display font-semibold text-ink-900 leading-[1.05] tracking-tight animate-fade-up text-4xl sm:text-5xl lg:text-6xl"
-            style={{ animationDelay: '60ms' }}
-          >
+          <h1 className="font-display font-semibold text-ink-900 leading-[1.05] tracking-tight text-4xl sm:text-5xl lg:text-6xl">
             Full-Stack <span className="text-rust-gradient">(MERN)</span> Developer &amp;{' '}
             <span className="text-rust-gradient">Generative AI</span> Enthusiast
           </h1>
 
-          <p
-            className="max-w-xl text-base lg:text-lg text-ink-500 leading-relaxed animate-fade-up"
-            style={{ animationDelay: '120ms' }}
-          >
+          <p className="max-w-xl text-base lg:text-lg text-ink-500 leading-relaxed">
             Final-year B.Tech IT student (2027) at Coimbatore Institute of Engineering and
             Technology (87% aggregate). Specialized in building scalable MERN web applications,
             REST APIs, and local Generative AI / RAG solutions.
           </p>
 
-          <div
-            className="flex flex-wrap items-center gap-4 pt-2 animate-fade-up"
-            style={{ animationDelay: '180ms' }}
-          >
+          <div className="flex flex-wrap items-center gap-4 pt-2">
             <a
               href="#contact"
-              className="group inline-flex items-center gap-2.5 rounded-xl bg-rust-500 hover:bg-rust-600 text-white font-semibold px-6 py-3.5 transition-all hover:shadow-rust-glow"
+              className="group inline-flex items-center gap-2.5 rounded-xl bg-rust-500 hover:bg-rust-600 text-white font-semibold px-6 py-3.5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-rust-glow"
             >
               <Download size={18} />
               Download Resume
@@ -56,21 +49,25 @@ export default function Hero() {
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-xl border border-gray-300 hover:border-ink-400 text-ink-800 font-medium px-6 py-3.5 transition-all hover:bg-white"
+              className="inline-flex items-center gap-2 rounded-xl border border-gray-300 hover:border-ink-400 text-ink-800 font-medium px-6 py-3.5 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white"
             >
               Get in Touch
             </a>
           </div>
-        </div>
+        </RevealOnScroll>
 
-        <div className="lg:col-span-5 animate-fade-up" style={{ animationDelay: '200ms' }}>
-          <div className="relative">
-            <div className="card-surface p-3 rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
+        <RevealOnScroll className="lg:col-span-5" delay={120}>
+          <div className="relative isolate overflow-visible min-h-[360px] sm:min-h-[430px] lg:min-h-[500px]">
+            <div className="pointer-events-none absolute inset-0 rounded-[2rem] blur-3xl bg-rust-500/8" />
+            <div className="pointer-events-none absolute inset-[-8%] z-0 overflow-visible">
+              <Hero3DCanvas />
+            </div>
+            <div className="relative z-10 card-surface p-3 rotate-[-2deg] hover:rotate-0 transition-all duration-500 hover:-translate-y-1 hover:shadow-card max-w-[360px] sm:max-w-none mx-auto lg:mx-0">
               <div className="rounded-xl overflow-hidden aspect-[4/5] bg-cream-300">
                 <img
                   src="/images/profile/profile.png"
                   alt="Rithika R — Developer"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   loading="eager"
                 />
               </div>
@@ -80,7 +77,7 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="absolute -bottom-6 -left-6 sm:-left-10 w-56 sm:w-64 card-surface p-4 shadow-card">
+            <div className="absolute -bottom-6 -left-6 sm:-left-10 w-56 sm:w-64 card-surface p-4 shadow-card transition-all duration-300 hover:-translate-y-1 z-20">
               <p className="text-[11px] font-semibold uppercase tracking-wider text-ink-400 mb-3">
                 Core Stack
               </p>
@@ -96,12 +93,12 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="absolute -top-4 -right-2 sm:-right-6 card-surface px-4 py-3 shadow-card animate-float">
+            <div className="absolute -top-4 -right-2 sm:-right-6 card-surface px-4 py-3 shadow-card animate-float z-20">
               <p className="font-display font-bold text-2xl text-rust-500 leading-none">87%</p>
               <p className="text-[11px] text-ink-400 mt-1">B.Tech IT</p>
             </div>
           </div>
-        </div>
+        </RevealOnScroll>
       </div>
     </section>
   );

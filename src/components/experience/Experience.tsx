@@ -1,5 +1,6 @@
 import { ArrowRight, MapPin } from 'lucide-react';
 import { internships } from '@/data/experience';
+import TiltCard from '@/components/TiltCard';
 
 export default function Experience() {
   return (
@@ -28,13 +29,15 @@ export default function Experience() {
 
           <div className="lg:col-span-7 space-y-5">
             {internships.map((job, i) => (
-              <article
+              <TiltCard
                 key={job.company}
-                className="card-surface card-hover p-6 lg:p-7 animate-fade-up"
+                as="article"
+                intensity={5}
+                className="card-surface p-6 lg:p-7 animate-fade-up transition-all duration-300 hover:-translate-y-1 hover:shadow-card hover:border-rust-200"
                 style={{ animationDelay: `${i * 80}ms` }}
               >
                 <div className="flex items-start gap-4">
-                  <div className="grid place-items-center h-12 w-12 rounded-xl bg-rust-50 text-rust-500 shrink-0">
+                  <div className="grid place-items-center h-12 w-12 rounded-xl bg-rust-50 text-rust-500 shrink-0 transition-all duration-300 group-hover:bg-rust-500 group-hover:text-white group-hover:scale-105">
                     <job.icon size={22} />
                   </div>
                   <div className="flex-1 min-w-0">
@@ -68,7 +71,7 @@ export default function Experience() {
                     </div>
                   </div>
                 </div>
-              </article>
+              </TiltCard>
             ))}
           </div>
         </div>

@@ -27,7 +27,7 @@ export default function Footer() {
               target={href.startsWith('http') ? '_blank' : undefined}
               rel={href.startsWith('http') ? 'noreferrer' : undefined}
               aria-label={label}
-              className="grid place-items-center h-9 w-9 rounded-lg text-ink-500 hover:text-rust-500 hover:bg-cream-300 transition-colors"
+              className="grid place-items-center h-9 w-9 rounded-lg text-ink-500 hover:text-rust-500 hover:bg-cream-300 transition-all duration-300 hover:-translate-y-0.5 hover:scale-105"
             >
               <Icon size={18} />
             </a>

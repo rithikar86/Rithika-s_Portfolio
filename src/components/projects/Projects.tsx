@@ -1,5 +1,6 @@
 import { ArrowUpRight } from 'lucide-react';
 import { portfolioProjects } from '@/data/projects';
+import TiltCard from '@/components/TiltCard';
 
 export default function Projects() {
   return (
@@ -22,20 +23,22 @@ export default function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
           {portfolioProjects.map((p, i) => (
-            <article
+            <TiltCard
               key={p.title}
-              className={`card-surface card-hover p-7 group animate-fade-up ${
+              as="article"
+              intensity={6}
+              className={`card-surface p-7 group animate-fade-up transition-all duration-300 hover:-translate-y-1 hover:shadow-card hover:border-rust-200 ${
                 p.feature ? 'lg:col-span-2 lg:row-span-1' : ''
               }`}
               style={{ animationDelay: `${i * 80}ms` }}
             >
               <div className="flex items-start justify-between">
-                <div className="grid place-items-center h-12 w-12 rounded-xl bg-rust-50 text-rust-500 group-hover:bg-rust-500 group-hover:text-white transition-colors duration-300">
+                <div className="grid place-items-center h-12 w-12 rounded-xl bg-rust-50 text-rust-500 group-hover:bg-rust-500 group-hover:text-white transition-all duration-300 group-hover:scale-105">
                   <p.icon size={22} />
                 </div>
                 <ArrowUpRight
                   size={20}
-                  className="text-ink-400 group-hover:text-rust-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all"
+                  className="text-ink-400 group-hover:text-rust-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300"
                 />
               </div>
               <h3 className="mt-5 font-display font-semibold text-ink-900 text-lg lg:text-xl">
@@ -46,13 +49,13 @@ export default function Projects() {
                 {p.tags.map((t) => (
                   <span
                     key={t}
-                    className="text-xs font-medium px-2.5 py-1 rounded-lg bg-cream-200 text-ink-600 border border-cream-400"
+                    className="text-xs font-medium px-2.5 py-1 rounded-lg bg-cream-200 text-ink-600 border border-cream-400 transition-all duration-300 group-hover:border-rust-200 group-hover:bg-rust-50"
                   >
                     {t}
                   </span>
                 ))}
               </div>
-            </article>
+            </TiltCard>
           ))}
         </div>
       </div>
