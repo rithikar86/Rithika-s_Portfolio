@@ -9,6 +9,7 @@ type FloatingCard3DProps = {
 export default function FloatingCard3D({ children, intensity = 1, className = '' }: FloatingCard3DProps) {
   const cardRef = useRef<HTMLDivElement | null>(null);
   const [rotation, setRotation] = useState({ rotateX: 0, rotateY: 0 });
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const isTouchDevice =
@@ -50,7 +51,9 @@ export default function FloatingCard3D({ children, intensity = 1, className = ''
   return (
     <div
       ref={cardRef}
-      className={className}
+      className={`border border-slate-800/80 hover:border-sky-500/40 transition-colors duration-300 ${className}`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       style={{
         perspective: '1000px',
         transformStyle: 'preserve-3d',
@@ -58,12 +61,20 @@ export default function FloatingCard3D({ children, intensity = 1, className = ''
       }}
     >
       <div
+        className="relative"
         style={{
           transform: `rotateX(${rotation.rotateX}deg) rotateY(${rotation.rotateY}deg)`,
           transformStyle: 'preserve-3d',
           transition: 'transform 0.2s ease-out',
         }}
       >
+        <div
+          className="pointer-events-none absolute inset-0 transition-opacity duration-300"
+          style={{
+            background: 'radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.12), transparent 60%)',
+            opacity: isHovered ? 1 : 0,
+          }}
+        />
         {children}
       </div>
     </div>

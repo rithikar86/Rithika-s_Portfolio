@@ -7,7 +7,7 @@ type BlobProps = {
   delay?: number;
 };
 
-export default function AnimatedBlob({ className = '', color = 'rgba(139,92,246,0.15)', size = 400, delay = 0 }: BlobProps) {
+export default function AnimatedBlob({ className = '', color = 'rgba(99,102,241,0.12)', size = 400, delay = 0 }: BlobProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

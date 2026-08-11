@@ -2,13 +2,13 @@ import { ArrowRight, Download, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const stackPills = [
-  { label: 'React', span: 'col-span-2', color: 'border-emerald-500/30 text-emerald-400 bg-emerald-500/10' },
+  { label: 'React', span: 'col-span-2', color: 'border-amber-600/30 text-amber-700 bg-amber-500/10' },
   { label: 'Node.js', span: 'col-span-1', color: 'border-obsidian-500/30 text-obsidian-300 bg-obsidian-700/30' },
   { label: 'MongoDB', span: 'col-span-1', color: 'border-obsidian-500/30 text-obsidian-300 bg-obsidian-700/30' },
-  { label: 'Python', span: 'col-span-2', color: 'border-emerald-500/30 text-emerald-400 bg-emerald-500/10' },
-  { label: 'LangChain', span: 'col-span-2', color: 'border-violet-500/30 text-violet-400 bg-violet-500/10' },
+  { label: 'Python', span: 'col-span-2', color: 'border-amber-600/30 text-amber-700 bg-amber-500/10' },
+  { label: 'LangChain', span: 'col-span-2', color: 'border-orange-600/30 text-orange-700 bg-orange-500/10' },
   { label: 'FAISS', span: 'col-span-1', color: 'border-obsidian-500/30 text-obsidian-300 bg-obsidian-700/30' },
-  { label: 'Ollama', span: 'col-span-2', color: 'border-violet-500/30 text-violet-400 bg-violet-500/10' },
+  { label: 'Ollama', span: 'col-span-2', color: 'border-orange-600/30 text-orange-700 bg-orange-500/10' },
 ];
 
 const containerVariants = {
@@ -27,6 +27,7 @@ const itemVariants = {
 export default function Hero() {
   return (
     <section id="home" className="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
+      <span id="about" aria-hidden="true" />
       <div className="section-pad max-w-7xl mx-auto grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
         <motion.div
           className="lg:col-span-7 space-y-6"
@@ -38,7 +39,7 @@ export default function Hero() {
             variants={itemVariants}
             className="inline-flex items-center gap-2 rounded-full glass px-3.5 py-1.5"
           >
-            <Sparkles size={14} className="text-emerald-400" />
+            <Sparkles size={14} className="text-amber-500" />
             <span className="text-xs font-medium text-obsidian-200">Full-Stack &amp; Generative AI</span>
           </motion.div>
 
@@ -64,10 +65,10 @@ export default function Hero() {
             className="flex flex-wrap items-center gap-4 pt-2"
           >
            <a
-  href="/images/projects/RITHIKA%20R%20RESUME.pdf"
+  href="/images/resume.pdf"
   target="_blank"
   rel="noopener noreferrer"
-  className="group inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-semibold px-6 py-3.5 transition-all hover:shadow-glow cursor-pointer"
+  className="group inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white font-semibold px-6 py-3.5 transition-all hover:shadow-glow cursor-pointer"
 >
   <Download size={18} />
   View / Download Resume
@@ -75,7 +76,7 @@ export default function Hero() {
 </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-xl border border-obsidian-500/50 hover:border-emerald-500/50 text-obsidian-200 font-medium px-6 py-3.5 transition-all hover:bg-obsidian-700/50 hover:text-obsidian-50"
+              className="inline-flex items-center gap-2 rounded-xl border border-obsidian-500/50 hover:border-amber-500/50 text-obsidian-200 font-medium px-6 py-3.5 transition-all hover:bg-obsidian-700/50 hover:text-obsidian-50"
             >
               Get in Touch
             </a>
@@ -89,10 +90,10 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
         >
           <div className="relative">
-            <div className="relative p-[2px] rounded-2xl bg-gradient-to-br from-emerald-500/40 via-violet-500/20 to-emerald-500/30 rotate-[-2deg] hover:rotate-0 transition-transform duration-500 shadow-[0_0_40px_rgba(16,185,129,0.15)]">
-              <div className="bg-obsidian-900 rounded-2xl p-3">
+            <div className="relative p-[2px] rounded-2xl bg-gradient-to-br from-[#F4A261]/50 via-[#E57C23]/20 to-[#E88A38]/40 rotate-[-2deg] hover:rotate-0 transition-transform duration-500 shadow-[0_0_40px_rgba(245,158,11,0.25)]">
+              <div className="bg-white border border-stone-200 rounded-2xl p-3">
                 <div className="rounded-xl overflow-hidden aspect-[4/5] bg-obsidian-700 relative">
-                  <div className="absolute inset-0 bg-gradient-to-t from-emerald-500/20 to-transparent z-10 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-amber-500/20 to-transparent z-10 pointer-events-none" />
                   <img
                     src="/images/profile/profile.png"
                     alt="Rithika R — Developer"
@@ -124,7 +125,7 @@ export default function Hero() {
             </div>
 
             <div className="absolute -top-4 -right-2 sm:-right-6 glass px-4 py-3 rounded-2xl shadow-glass animate-float">
-              <p className="font-display font-bold text-2xl text-emerald-400 leading-none">87%</p>
+              <p className="font-display font-bold text-2xl text-amber-600 leading-none">87%</p>
               <p className="text-[11px] text-obsidian-400 mt-1">B.Tech IT</p>
             </div>
           </div>

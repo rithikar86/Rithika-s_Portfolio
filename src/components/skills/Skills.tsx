@@ -56,7 +56,7 @@ export default function Skills() {
             >
               <SpotlightCard
                 className="glow-card h-full group"
-                spotlightColor="rgba(16, 185, 129, 0.06)"
+                spotlightColor="rgba(56, 189, 248, 0.10)"
               >
                 <div className="glow-card-inner h-full">
                   <div className="flex items-start gap-5">

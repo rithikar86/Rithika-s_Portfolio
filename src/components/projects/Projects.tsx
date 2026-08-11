@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Camera, Code2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { portfolioProjects } from '@/data/projects';
+import { codeSnippets } from '@/data/engineering';
 import SpotlightCard from '@/components/SpotlightCard';
+import CodeModal from '@/components/code/CodeModal';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -24,6 +26,7 @@ function cardTechs(title: string): string[] {
 
 export default function Projects() {
   const [activeTech, setActiveTech] = useState<string | null>(null);
+  const [openCode, setOpenCode] = useState<string | null>(null);
 
   const gridOrder = [
     { idx: 0, span: 'lg:col-span-2' },
@@ -76,7 +79,7 @@ export default function Projects() {
                 <div className={`transition-all duration-300 ${opacityClass}`}>
                   <SpotlightCard
                     className="glow-card h-full group"
-                    spotlightColor="rgba(16, 185, 129, 0.06)"
+                    spotlightColor="rgba(56, 189, 248, 0.10)"
                   >
                     <div className="glow-card-inner h-full flex flex-col">
                       <div className="flex items-start justify-between">
@@ -106,6 +109,29 @@ export default function Projects() {
                           </span>
                         ))}
                       </div>
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {p.gallery && (
+                          <a
+                            href={p.gallery}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 rounded-lg border border-obsidian-500/30 bg-obsidian-700/40 px-3.5 py-2 text-xs font-semibold text-obsidian-200 transition-all hover:border-emerald-500/40 hover:text-emerald-400 hover:shadow-[0_0_12px_rgba(56,189,248,0.2)]"
+                          >
+                            <Camera size={14} />
+                            View Gallery
+                          </a>
+                        )}
+                        {codeSnippets[p.title] && (
+                          <button
+                            type="button"
+                            onClick={() => setOpenCode(p.title)}
+                            className="inline-flex items-center gap-2 rounded-lg border border-obsidian-500/30 bg-obsidian-700/40 px-3.5 py-2 text-xs font-semibold text-obsidian-200 transition-all hover:border-emerald-500/40 hover:text-emerald-400 hover:shadow-[0_0_12px_rgba(56,189,248,0.2)] cursor-pointer"
+                          >
+                            <Code2 size={14} />
+                            View Code
+                          </button>
+                        )}
+                      </div>
                     </div>
                   </SpotlightCard>
                 </div>
@@ -114,6 +140,12 @@ export default function Projects() {
           })}
         </motion.div>
       </div>
+
+      <CodeModal
+        open={openCode !== null}
+        onClose={() => setOpenCode(null)}
+        snippet={openCode ? codeSnippets[openCode] : undefined}
+      />
     </section>
   );
 }

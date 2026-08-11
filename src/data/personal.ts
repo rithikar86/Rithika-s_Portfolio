@@ -37,10 +37,11 @@ export const profile = {
 
 export const navLinks = [
   { label: 'Home', href: '#home' },
-  { label: 'Skills', href: '#skills' },
+  { label: 'About', href: '#about' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Certifications', href: '#certifications' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Architecture', href: '#architecture' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 export const socials = [
@@ -57,7 +58,7 @@ export const stats = [
 ];
 
 export const contactItems = [
-  { label: 'Email', value: 'rithikarajar@gmail.com', href: 'mailto:rithikarajar@gmail.com', icon: Mail },
+  { label: 'Email', value: 'rithikarajar@gmail.com', href: 'mailto:rithikarajar@gmail.com?subject=Portfolio%20Inquiry', icon: Mail },
   { label: 'LinkedIn', value: 'in/rithikar86', href: 'https://www.linkedin.com/in/rithikar86', icon: Linkedin },
   { label: 'GitHub', value: 'github.com/rithikar86', href: 'https://github.com/rithikar86', icon: Github },
   { label: 'Location', value: 'Coimbatore, Tamil Nadu', href: undefined, icon: MapPin },

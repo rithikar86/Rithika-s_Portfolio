@@ -46,7 +46,7 @@ export default function Achievements() {
             <motion.div key={h.title} variants={itemVariants}>
               <SpotlightCard
                 className="glow-card h-full group"
-                spotlightColor="rgba(16, 185, 129, 0.06)"
+                spotlightColor="rgba(56, 189, 248, 0.10)"
               >
                 <div className="glow-card-inner h-full flex flex-col">
                   <div className="flex items-center justify-between">
@@ -76,7 +76,7 @@ export default function Achievements() {
           viewport={{ once: true, margin: '-50px' }}
         >
           <motion.div variants={itemVariants}>
-            <SpotlightCard className="glow-card h-full" spotlightColor="rgba(16, 185, 129, 0.05)">
+            <SpotlightCard className="glow-card h-full" spotlightColor="rgba(56, 189, 248, 0.08)">
               <div className="glow-card-inner">
                 <div className="flex items-center gap-3 mb-5">
                   <div className="grid place-items-center h-11 w-11 rounded-xl bg-emerald-500/10 text-emerald-400">
@@ -99,7 +99,7 @@ export default function Achievements() {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <SpotlightCard className="glow-card h-full" spotlightColor="rgba(124, 58, 237, 0.05)">
+            <SpotlightCard className="glow-card h-full" spotlightColor="rgba(99, 102, 241, 0.10)">
               <div className="glow-card-inner">
                 <div className="flex items-center gap-3 mb-5">
                   <div className="grid place-items-center h-11 w-11 rounded-xl bg-violet-500/10 text-violet-400">

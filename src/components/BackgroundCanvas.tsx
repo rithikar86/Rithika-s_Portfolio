@@ -37,7 +37,7 @@ export default function BackgroundCanvas() {
         vx: (Math.random() - 0.5) * 0.2,
         vy: (Math.random() - 0.5) * 0.2,
         size: Math.random() * 1.5 + 0.5,
-        opacity: Math.random() * 0.4 + 0.1,
+        opacity: Math.random() * 0.15 + 0.05,
       }));
     };
 
@@ -51,8 +51,8 @@ export default function BackgroundCanvas() {
     window.addEventListener('resize', () => { resize(); initParticles(); });
     if (!isMobile) window.addEventListener('mousemove', onMouse);
 
-    const rgba1 = (o: number) => `rgba(16, 185, 129, ${o})`;
-    const rgba2 = (o: number) => `rgba(139, 92, 246, ${o})`;
+    const rgba1 = (o: number) => `rgba(56, 189, 248, ${o})`;
+    const rgba2 = (o: number) => `rgba(99, 102, 241, ${o})`;
 
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -93,7 +93,7 @@ export default function BackgroundCanvas() {
               ctx.beginPath();
               ctx.moveTo(p.x, p.y);
               ctx.lineTo(p2.x, p2.y);
-              ctx.strokeStyle = `rgba(16, 185, 129, ${(1 - dist2 / 100) * 0.1})`;
+              ctx.strokeStyle = `rgba(56, 189, 248, ${(1 - dist2 / 100) * 0.08})`;
               ctx.lineWidth = 0.5;
               ctx.stroke();
             }

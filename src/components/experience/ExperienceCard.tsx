@@ -67,25 +67,25 @@ export default function ExperienceCard({
 
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <h3 className="text-lg font-semibold text-[var(--color-text-primary)]">{role}</h3>
-              <span className="text-sm font-medium text-[var(--color-text-muted)]">{period}</span>
+              <h3 className="text-lg font-semibold text-slate-50">{role}</h3>
+              <span className="text-sm font-medium text-slate-400">{period}</span>
             </div>
-            <p className="mt-1 font-medium text-[var(--color-primary)]">{company}</p>
-            <p className="mt-2 text-sm text-[var(--color-text-muted)]">{location}</p>
+            <p className="mt-1 font-medium text-sky-400">{company}</p>
+            <p className="mt-2 text-sm text-slate-400">{location}</p>
 
             <ul className="mt-4 space-y-2">
               {points.map((point) => (
-                <li key={point} className="experience-bullet flex items-start gap-2 text-sm leading-6 text-[var(--color-text-secondary)]">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-primary)]" />
+                <li key={point} className="experience-bullet flex items-start gap-2 text-sm leading-6 text-slate-300">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400" />
                   <span>{point}</span>
-                  <ArrowRight size={14} className="experience-bullet-arrow mt-[0.35rem] text-[var(--color-primary)]" />
+                  <ArrowRight size={14} className="experience-bullet-arrow mt-[0.35rem] text-sky-400" />
                 </li>
               ))}
             </ul>
 
             <div className="mt-4 flex flex-wrap gap-2">
               {tags.map((tag) => (
-                <span key={tag} className="rounded-full border border-[var(--color-border)] bg-[var(--color-surface-primary)] px-3 py-1 text-xs font-medium text-[var(--color-text-secondary)]">
+                <span key={tag} className="rounded-full border border-slate-700/50 bg-slate-800/60 px-3 py-1 text-xs font-medium text-slate-300">
                   {tag}
                 </span>
               ))}

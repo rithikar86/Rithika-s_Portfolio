@@ -10,7 +10,7 @@ type SpotlightCardProps = {
 export default function SpotlightCard({
   children,
   className = '',
-  spotlightColor = 'rgba(16, 185, 129, 0.08)',
+  spotlightColor = 'rgba(56, 189, 248, 0.12)',
   disabled = false,
 }: SpotlightCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -51,7 +51,7 @@ export default function SpotlightCard({
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
-      className={`relative overflow-hidden rounded-2xl transition-all duration-300 ${className}`}
+      className={`relative overflow-hidden rounded-2xl border border-slate-800/80 transition-all duration-300 ${className}`}
       style={{
         perspective: '1000px',
         transformStyle: 'preserve-3d',

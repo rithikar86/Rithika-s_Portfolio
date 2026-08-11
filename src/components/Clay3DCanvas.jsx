@@ -21,11 +21,11 @@ function ClayMesh({ activeTab, pointer }) {
       <group ref={meshRef}>
         {activeTab === 'Skills' ? (
           <Torus args={[1.2, 0.35, 32, 64]}>
-            <meshStandardMaterial color="#D95D39" roughness={0.6} metalness={0.02} />
+            <meshStandardMaterial color="#38BDF8" roughness={0.5} metalness={0.1} transparent opacity={0.2} />
           </Torus>
         ) : (
           <RoundedBox args={[2.0, 1.2, 1.2]} radius={0.28} smoothness={4}>
-            <meshStandardMaterial color="#D95D39" roughness={0.6} metalness={0.02} />
+            <meshStandardMaterial color="#38BDF8" roughness={0.5} metalness={0.1} transparent opacity={0.2} />
           </RoundedBox>
         )}
       </group>
@@ -62,21 +62,21 @@ export default function Clay3DCanvas({ activeTab = 'Home' }) {
 
   // Keep a lightweight background wrapper on SSR/non-mounted renders to prevent layout shifts.
   if (!mounted) {
-    return <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden opacity-80" style={{ background: '#F7F4EF' }} />;
+    return <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden opacity-80" style={{ background: '#090D16' }} />;
   }
 
   return (
-    <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden opacity-80" style={{ background: '#F7F4EF' }}>
+    <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden opacity-80" style={{ background: '#090D16' }}>
       <Canvas
         gl={{ alpha: true, antialias: true }}
         dpr={[1, 1.7]}
         camera={{ position: [0, 0, 6], fov: 28 }}
         style={{ width: '100%', height: '100%', background: 'transparent' }}
       >
-        <color attach="background" args={["#F7F4EF"]} />
+        <color attach="background" args={["#090D16"]} />
         <ambientLight intensity={0.6} />
         <directionalLight position={[5, 8, 5]} intensity={1.2} castShadow />
-        <directionalLight position={[-5, -5, -2]} intensity={0.3} color="#7A8B7B" />
+        <directionalLight position={[-5, -5, -2]} intensity={0.3} color="#6366F1" />
         <ClayMesh activeTab={activeTab} pointer={pointer} />
       </Canvas>
     </div>
